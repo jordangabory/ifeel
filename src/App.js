@@ -16,7 +16,7 @@ class App extends Component {
   }
   render() {
     const title= 'jordan';
-    console.log('  toutes les data' , this.props.data[0].category[0]);  
+    console.log('  toutes les data' , this.props.data);  
 
     const {data} = this.props;
     const listbyname= this.props.data[0].category[0].children;
@@ -26,7 +26,17 @@ class App extends Component {
     const namelist =   data.map(name =>{
       console.log('console  de  tous  la  base  donnée ', name);
       console.log(' console  de  tous les name  et  le   sexe ', name.category[0].name, name.category[1].name )
+      return(
+        <a>{name.category[0].name} </a>
+      )
+    })
 
+    const xman =   data.map(name =>{
+      console.log('console  de  tous  la  base  donnée ', name);
+      console.log(' console  de  tous le name', name.category[0].name, name.category[1].name )
+      return(
+        <a>{name.category[1].name}</a>
+      )
     })
 
     const listdata = data.map(list =>{
@@ -35,9 +45,15 @@ class App extends Component {
 
     const by = listbyname.map(list =>{
       console.log('console log   des  children ',  list.name)
+      return(
+        <MenuItem>{list.name}</MenuItem>
+      )
     })
     const li  =  listbygenre.map(list =>{
       console.log('console log   des  children ',  list.name)
+      return(
+        <MenuItem>{list.name}</MenuItem>
+      )
     })
     return (
       <div className="App">
@@ -56,12 +72,12 @@ class App extends Component {
                 </InputGroup.Addon>
               </InputGroup>
             </FormGroup>
-            <MenuItem eventKey="1">Genre</MenuItem>
             <MenuItem divider />
-            <MenuItem eventKey="2">liste par genre</MenuItem>
-            <MenuItem eventKey="3">Byname</MenuItem>
+            <MenuItem eventKey="1">{namelist}</MenuItem>
+            {by}
             <MenuItem divider />
-            <MenuItem eventKey="4">Liste Byname</MenuItem>
+            <MenuItem eventKey="3">{xman}</MenuItem>
+            {li}
           </DropdownButton>
         </ButtonToolbar>
       </div>
