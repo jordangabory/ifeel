@@ -1,17 +1,9 @@
 import React, {Component}  from 'react';
 import { DropdownButton, SplitButton, Dropdown , MenuItem ,FormGroup, FormControl, ControlLabel , ButtonToolbar, InputGroup , Glyphicon  } from 'react-bootstrap';
 import logo from '../../logo.svg';
-class Namelist extends  Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            search: '',
-        }
-    }
+import Search  from '../Search/index.js';
 
-    updateSearch(event) {
-      this.setState({search: event.target.value.substr(0, 20)});
-    }
+class Namelist extends  Component{
         
     render(){
         const title= 'jordan';
@@ -62,15 +54,7 @@ class Namelist extends  Component{
             </div>
             <ButtonToolbar>
             <DropdownButton  title={title} key={title} >
-                <FormGroup>
-                <InputGroup>
-                    <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch.bind(this)} />
-                    {console.log('test  search', this.state.search )}
-                    <InputGroup.Addon>
-                    <Glyphicon glyph="search" />
-                    </InputGroup.Addon>
-                </InputGroup>
-                </FormGroup>
+                <Search />
                 <MenuItem divider />
                 <MenuItem eventKey="1">{namelist}</MenuItem>
                 {by}
