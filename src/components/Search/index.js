@@ -3,23 +3,21 @@ import  { DropdownButton, SplitButton, Dropdown , MenuItem ,FormGroup, FormContr
 
 
 class Search extends  Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            search: '',
-        }
+    
+    handleChange(e){
+        const title =  e.target.value;
+        this.props.updateSearch(title)
     }
+    
 
-    updateSearch(event) {
-      this.setState({search: event.target.value.substr(0, 20)});
-    }
-
+   
     render(){
+        const { filterVal, updateSearch} = this.props
         return(
             <FormGroup>
-            <InputGroup>
-                <FormControl type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch.bind(this)} />
-                {console.log('test  search', this.state.search )}
+            <InputGroup type="text" placeholder="Search"    onChange={this.handleChange.bind(this)}>
+                <FormControl  />
+                
                 <InputGroup.Addon>
                 <Glyphicon glyph="search" />
                 </InputGroup.Addon>
@@ -31,4 +29,4 @@ class Search extends  Component{
 }
 
 
-export  default  Search
+export  default  Search;
