@@ -22,3 +22,38 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+  color:white;
+  border-color: none;
+  background-color: #222222
+}
+
+.btn-default{
+  color:white;
+  background-color: #222222
+}
+
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  color:white;
+  border-color: none;
+  background-color: #222222
+}
+
+.dropdown-menu{
+  background-color: #222222
+}
+
+
+
+.form-control{
+      background-color: #49494b;
+      border: none;
+}
+
+.dropdown-menu>li>a{color:white}
+
+.dropdown-menu>li>a:hover{background-color:#a91922}
+a{
+  color: #949496
+}

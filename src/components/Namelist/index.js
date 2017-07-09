@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import { DropdownButton, SplitButton, Dropdown , MenuItem ,FormGroup, FormControl, ControlLabel , ButtonToolbar, InputGroup , Glyphicon  } from 'react-bootstrap';
+import { DropdownButton , MenuItem , ButtonToolbar,  } from 'react-bootstrap';
 import logo from '../../logo.svg';
 import Search  from '../Search/index.js';
 
@@ -19,7 +19,7 @@ class Namelist extends  Component{
 
         {console.log('test  search', this.state.search )}
 
-        const title= 'jordan';
+        const title= 'Select a channel';
         console.log('  toutes les data' , this.props.data);  
 
         const {data} = this.props;
@@ -45,21 +45,19 @@ class Namelist extends  Component{
             )
         })
 
-        const listdata = data.map(list =>{
-            console.log('console log de  tous le  tableau  0 ' , list.category[0].children  )
-        })
+        
 
         const by = listbyname.map(list =>{
             console.log('console log   des  children ',  list.name)
             return(
-                <MenuItem>{list.name}</MenuItem>
+                <MenuItem className="white-li">{list.name}</MenuItem>
             )
         })
         
         const li  =  listbygenre.map(list =>{
             console.log('console log   des  children ',  list.name)
             return(
-                <MenuItem>{list.name}</MenuItem>
+                <MenuItem className="white-li">{list.name}</MenuItem>
             )
         })
         
@@ -72,16 +70,15 @@ class Namelist extends  Component{
             <h2>Welcome to React</h2>
             </div>
             <ButtonToolbar>
-            <DropdownButton  title={title} key={title} >
+            <DropdownButton  title={title} key={title} className="moi" >
                 <Search
                     filterVal={this.state.search}
                     updateSearch={this.updateSearch.bind(this)}
                     
                  />
-                <MenuItem divider />
                 <MenuItem eventKey="1">{namelist}</MenuItem>
                 {by}
-                <MenuItem divider />
+                
                 <MenuItem eventKey="3">{xman}</MenuItem>
                 {li}
             </DropdownButton>

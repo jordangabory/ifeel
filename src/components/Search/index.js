@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import  { DropdownButton, SplitButton, Dropdown , MenuItem ,FormGroup, FormControl, ControlLabel , ButtonToolbar, InputGroup , Glyphicon  } from 'react-bootstrap';
+import  {FormGroup, FormControl, InputGroup , Glyphicon  } from 'react-bootstrap';
 
 
 class Search extends  Component{
@@ -12,15 +12,15 @@ class Search extends  Component{
 
    
     render(){
-        const { filterVal, updateSearch} = this.props
+        
         return(
-            <FormGroup>
-            <InputGroup type="text" placeholder="Search"    onChange={this.handleChange.bind(this)}>
-                <FormControl  />
+            <FormGroup>             
+            <InputGroup >
+                <FormControl  type="text" placeholder="Search"  className="input-group"  onChange={this.handleChange.bind(this)}/>
                 
-                <InputGroup.Addon>
+                <FormControl.Feedback>
                 <Glyphicon glyph="search" />
-                </InputGroup.Addon>
+                </FormControl.Feedback>
             </InputGroup>
             </FormGroup>
         )
