@@ -49,6 +49,7 @@
 .form-control{
       background-color: #49494b;
       border: none;
+      color: white;
 }
 
 .dropdown-menu>li>a{color:white}

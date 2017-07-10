@@ -5,15 +5,18 @@ import Search  from '../Search/index.js';
 
 class Namelist extends  Component{
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             search: ' ',
+            contacts: props.contacts
         }
     }
 
     updateSearch(search) {
       this.setState({search});
     }
+
+    
         
     render(){
 
@@ -62,7 +65,14 @@ class Namelist extends  Component{
         })
         
          {console.log('test  search omp', this.state.search )}
+
+        const  contactslist=this.setState({
+            contacts: this.state.contacts.concat(by)        
+        });
+         
+       console.log('yopbsb', contactslist); 
         
+
         return (
         <div className="App">
             <div className="App-header">
