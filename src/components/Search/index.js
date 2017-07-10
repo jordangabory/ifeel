@@ -4,6 +4,7 @@ import  {FormGroup, FormControl, InputGroup , Glyphicon  } from 'react-bootstrap
 
 class Search extends  Component{
     
+    //recuperation  des   valeurs  value
     handleChange(e){
         const title =  e.target.value;
         this.props.updateSearch(title)

@@ -12,6 +12,7 @@ class Namelist extends  Component{
         }
     }
 
+
     updateSearch(search) {
       this.setState({search});
     }
@@ -22,6 +23,7 @@ class Namelist extends  Component{
 
         {console.log('test  search', this.state.search )}
 
+        //title    du  dropdown 
         const title= 'Select a channel';
         console.log('  toutes les data' , this.props.data);  
 
@@ -49,7 +51,7 @@ class Namelist extends  Component{
         })
 
         
-
+        // map  de la  liste  byname 
         const by = listbyname.map(list =>{
             console.log('console log   des  children ',  list.name)
             return(
@@ -57,20 +59,18 @@ class Namelist extends  Component{
             )
         })
         
+
+        //map de  la  liste  genre
         const li  =  listbygenre.map(list =>{
             console.log('console log   des  children ',  list.name)
             return(
                 <MenuItem className="white-li">{list.name}</MenuItem>
             )
         })
-        
+
+        // retour   de    l 'input   search 
          {console.log('test  search omp', this.state.search )}
 
-        const  contactslist=this.setState({
-            contacts: this.state.contacts.concat(by)        
-        });
-         
-       console.log('yopbsb', contactslist); 
         
 
         return (
@@ -82,6 +82,7 @@ class Namelist extends  Component{
             <ButtonToolbar>
             <DropdownButton  title={title} key={title} className="moi" >
                 <Search
+                /*  export de  la   valeur  search  et  de  la   focntion  updateSearch **/
                     filterVal={this.state.search}
                     updateSearch={this.updateSearch.bind(this)}
                     
